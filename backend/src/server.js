@@ -2,6 +2,9 @@ import express, { response } from "express";
 import { ENV } from "./lib/env.js";
 import path from "path"
 import { request } from "http";
+import { connect } from "http2";
+import { connectDB } from "./lib/db.js";
+import { start } from "repl";
 const app = express()
 
 
@@ -19,4 +22,17 @@ if(ENV.NODE_ENV==="production"){
 app.get("/api/test",(request,response)=>{
     response.json({ message:"backend is working!"});
 });
-app.listen(ENV.PORT,()=>console.log("server is running on port:",ENV.PORT))
+
+
+const startserver = async()=>{
+    try{
+        await connectDB();
+        app.listen(ENV.PORT,()=>{
+        console.log("server is running on port:",ENV.PORT)
+    });
+    }catch(error){
+        console.error("Error in connecting to DB");
+
+    }
+}
+ startserver();
