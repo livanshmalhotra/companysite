@@ -26,6 +26,9 @@ app.get("/api/test",(request,response)=>{
 
 const startserver = async()=>{
     try{
+        if(!ENV.DB_URL){
+            throw new Error("DB URL is not defined in enviorenment variables");
+        }
         await connectDB();
         app.listen(ENV.PORT,()=>{
         console.log("server is running on port:",ENV.PORT)
@@ -35,4 +38,4 @@ const startserver = async()=>{
 
     }
 }
- startserver();
+startserver();
