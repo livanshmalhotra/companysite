@@ -17,5 +17,5 @@ createRoot(document.getElementById('root')).render(
     <ClerkProvider publishableKey={VITE_CLERK_PUBLISHABLE_KEY}>
       <App />
     </ClerkProvider>
-  </StrictMode>,
+  </StrictMode>
 )
