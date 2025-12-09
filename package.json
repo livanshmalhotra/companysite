@@ -26,6 +26,5 @@
   },
   "homepage": "https://github.com/livanshmalhotra/companysite#readme",
   "dependencies": {
-    "lucide-react": "^0.556.0"
   }
 }
