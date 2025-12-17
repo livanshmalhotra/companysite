@@ -65,6 +65,9 @@ app.get("/api/test", (req, res) => {
   res.json({ message: "backend is working!" });
 });
 
+app.post("/api/inngest", (req, res) => {
+  res.status(200).json({ ok: true });
+});
 /* ---------------- Start Server ---------------- */
 const startServer = async () => {
   try {
