@@ -1,0 +1,13 @@
+{
+    "functions": {
+      "backend/api/inngest.js": {
+        "runtime": "nodejs18.x"
+      }
+    },
+    "rewrites": [
+      {
+        "source": "/api/inngest",
+        "destination": "/api/inngest"
+      }
+    ]
+  }
